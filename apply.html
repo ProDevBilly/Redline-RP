@@ -38,11 +38,6 @@
             text-align: center;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         h1 {
             font-size: 42px;
             margin-bottom: 10px;
@@ -69,6 +64,7 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
+        /* SIMPLE MUTE BUTTON */
         #mute-btn {
             position: fixed;
             bottom: 20px;
@@ -77,18 +73,16 @@
             font-size: 22px;
             border: none;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
+            background: #000000cc;
             color: white;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
             z-index: 9999;
         }
 
         #mute-btn:hover {
             transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.35);
+            background: #000000ee;
         }
     </style>
 </head>
@@ -103,7 +97,7 @@
 </div>
 
 <!-- Background Music -->
-<audio id="bg-music" loop>
+<audio id="bg-music" autoplay loop muted>
     <source src="https://raw.githubusercontent.com/ProDevBilly/Redline-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
@@ -113,9 +107,22 @@
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("mute-btn");
 
-    document.addEventListener("click", () => {
-        if (music.paused) music.play();
-    }, { once: true });
+    music.volume = 0;
+    let targetVolume = 0.5;
+    let fadeSpeed = 0.01;
+
+    setTimeout(() => {
+        music.muted = false;
+
+        let fadeIn = setInterval(() => {
+            if (music.volume < targetVolume) {
+                music.volume += fadeSpeed;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 100);
+
+    }, 500);
 
     function toggleMute() {
         music.muted = !music.muted;
