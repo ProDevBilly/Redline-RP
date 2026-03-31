@@ -64,15 +64,17 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
-        /* MUTE BUTTON — NO BACKGROUND */
+        /* ⭐ FIXED — MUTE BUTTON WITH NO BACKGROUND AT ALL */
         #mute-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 0;
-            font-size: 16px;
-            border: none;
-            background: none;
+            padding: 0;          /* remove padding */
+            margin: 0;
+            border: none;        /* remove border */
+            background: none;    /* remove background */
+            border-radius: 0;    /* remove circle */
+            font-size: 32px;     /* emoji size */
             color: white;
             cursor: pointer;
             transition: 0.2s;
