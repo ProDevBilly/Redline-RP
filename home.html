@@ -144,6 +144,7 @@
             opacity: 0.7;
         }
 
+        /* SIMPLE SOLID MUTE BUTTON */
         #mute-btn {
             position: fixed;
             bottom: 20px;
@@ -152,7 +153,7 @@
             font-size: 22px;
             border: none;
             border-radius: 50%;
-            background: #000000cc;
+            background: #111;
             color: white;
             cursor: pointer;
             transition: 0.2s;
@@ -161,7 +162,7 @@
 
         #mute-btn:hover {
             transform: scale(1.1);
-            background: #000000ee;
+            background: #000;
         }
     </style>
 </head>
@@ -205,8 +206,9 @@
     © 2026 RedLine RP — All Rights Reserved
 </div>
 
+<!-- Background Music -->
 <audio id="bg-music" autoplay loop muted>
-    <source src="https://raw.githubusercontent.com/ProDevBilly/Redline-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
+    <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
 <button id="mute-btn" onclick="toggleMute()">🔊</button>
