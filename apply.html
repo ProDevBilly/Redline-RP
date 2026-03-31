@@ -64,7 +64,6 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
-        /* SIMPLE MUTE BUTTON */
         #mute-btn {
             position: fixed;
             bottom: 20px;
@@ -73,7 +72,7 @@
             font-size: 22px;
             border: none;
             border-radius: 50%;
-            background: #000000cc;
+            background: #111;
             color: white;
             cursor: pointer;
             transition: 0.2s;
@@ -82,7 +81,7 @@
 
         #mute-btn:hover {
             transform: scale(1.1);
-            background: #000000ee;
+            background: #000;
         }
     </style>
 </head>
@@ -93,12 +92,15 @@
     <h1>Apply to RedLine RP</h1>
     <p>The best roleplay server you’ll ever experience inside San Aurie.</p>
 
+    <a class="discord-btn" href="https://discord.gg/n77YbQMfTt" target="_blank" style="background:#5865F2;color:white;padding:12px 20px;border-radius:10px;font-weight:bold;text-decoration:none;display:inline-block;margin-bottom:20px;">
+        Join Our Discord (Required)
+    </a>
+
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYhl_lUKsxTnMIzGH7KmmZYo0Cvm9ho8VwM4WOxSpF5zypOQ/viewform?embedded=true"></iframe>
 </div>
 
-<!-- Background Music -->
 <audio id="bg-music" autoplay loop muted>
-    <source src="https://raw.githubusercontent.com/ProDevBilly/Redline-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
+    <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
 <button id="mute-btn" onclick="toggleMute()">🔊</button>
