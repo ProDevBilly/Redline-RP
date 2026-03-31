@@ -15,10 +15,10 @@
             color: #fff;
             overflow-x: hidden;
 
-            /* Animated gradient background */
-            background: linear-gradient(120deg, #ff4d4d, #ff66cc, #3399ff);
+            /* Softer animated gradient background */
+            background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
             background-size: 300% 300%;
-            animation: bgShift 12s ease infinite;
+            animation: bgShift 14s ease infinite;
         }
 
         @keyframes bgShift {
@@ -27,47 +27,19 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* NAVBAR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        nav img {
-            height: 55px;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #fff;
-            font-size: 18px;
-        }
-
-        nav a:hover {
-            opacity: 0.7;
-        }
-
         /* GLASS PANEL */
         .glass-panel {
             width: 90%;
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 60px auto;
             padding: 40px 20px;
 
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
 
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.20);
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 
             animation: fadeIn 1.2s ease forwards;
@@ -153,16 +125,6 @@
 </head>
 
 <body>
-
-<!-- NAVBAR -->
-<nav>
-    <img src="simple-logo.png" alt="RedLine RP Logo">
-    <div>
-        <a href="home.html">Home</a>
-        <a href="apply.html">Apply</a>
-        <a href="rules.html">Rules</a>
-    </div>
-</nav>
 
 <!-- GLASS PANEL -->
 <div class="glass-panel">
