@@ -16,6 +16,7 @@
 
             /* Center everything */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -31,11 +32,44 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* TOPBAR */
+        .topbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .topbar a {
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0% { color: #ffffff; }
+            50% { color: #ffe6f2; }
+            100% { color: #ffffff; }
+        }
+
         /* Glass Panel Animation */
         .glass-panel {
             width: 90%;
             max-width: 1100px;
             padding: 40px 20px;
+            margin-top: 120px;
+
             background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(18px);
             border-radius: 20px;
@@ -121,6 +155,14 @@
 
 <body>
 
+<!-- TOPBAR WITH ANIMATED TEXT -->
+<div class="topbar">
+    <a href="home.html">Home</a>
+    <a href="apply.html">Apply</a>
+    <a href="#">Departments</a>
+    <a href="#">About</a>
+</div>
+
 <div class="glass-panel">
 
     <!-- Animated Header Image -->
@@ -145,6 +187,9 @@
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("mute-btn");
     let isPlaying = false;
+
+    // Start music at 25% volume
+    music.volume = 0.25;
 
     function toggleMusic() {
         if (!isPlaying) {
