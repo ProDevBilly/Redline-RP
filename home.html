@@ -24,10 +24,58 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* ANNOUNCEMENT BANNER */
+        #announcement-banner {
+            width: 100%;
+            padding: 15px 20px;
+            display: none; /* hidden by default */
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+
+            animation: slideDown 0.6s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #announcement-close {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #announcement-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.1);
+        }
+
         .glass-panel {
             width: 90%;
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 100px auto 40px auto; /* moved down for banner */
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(18px);
@@ -144,7 +192,7 @@
             opacity: 0.7;
         }
 
-        /* LIQUID GLASS BUTTON */
+        /* LIQUID GLASS MUSIC BUTTON */
         #mute-btn {
             position: fixed;
             bottom: 20px;
@@ -171,6 +219,12 @@
 </head>
 
 <body>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div id="announcement-banner">
+    <span id="announcement-text">🚨 New Announcement: Server updates are now live!</span>
+    <button id="announcement-close">✖</button>
+</div>
 
 <div class="glass-panel">
 
@@ -209,13 +263,28 @@
     © 2026 RedLine RP — All Rights Reserved
 </div>
 
+<!-- MUSIC -->
 <audio id="bg-music" loop>
     <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
-<button id="mute-btn" onclick="toggleMusic()">▶️</button>
+<button id="mute-btn" onclick="toggleMusic()">🔇</button>
 
 <script>
+    /* ANNOUNCEMENT CONTROL */
+    let showAnnouncement = true; 
+    const banner = document.getElementById("announcement-banner");
+    const closeBtn = document.getElementById("announcement-close");
+
+    if (showAnnouncement === true) {
+        banner.style.display = "flex";
+    }
+
+    closeBtn.onclick = () => {
+        banner.style.display = "none";
+    };
+
+    /* MUSIC CONTROL */
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("mute-btn");
     let isPlaying = false;
@@ -227,7 +296,7 @@
             isPlaying = true;
         } else {
             music.pause();
-            btn.textContent = "▶️";
+            btn.textContent = "🔇";
             isPlaying = false;
         }
     }
