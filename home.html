@@ -28,8 +28,10 @@
         #announcement-banner {
             width: 100%;
             padding: 15px 20px;
-            display: none; /* hidden by default */
-            justify-content: space-between;
+
+            display: none; /* hidden until JS shows it */
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
 
             background: rgba(255, 255, 255, 0.18);
@@ -51,12 +53,14 @@
             animation: slideDown 0.6s ease forwards;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        #announcement-text {
+            grid-column: 2;
+            text-align: center;
         }
 
         #announcement-close {
+            grid-column: 3;
+            justify-self: end;
             background: rgba(255, 255, 255, 0.25);
             border: none;
             border-radius: 50%;
@@ -70,6 +74,11 @@
         #announcement-close:hover {
             background: rgba(255, 255, 255, 0.35);
             transform: scale(1.1);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .glass-panel {
@@ -222,7 +231,7 @@
 
 <!-- ANNOUNCEMENT BANNER -->
 <div id="announcement-banner">
-    <span id="announcement-text">🚨 New Announcement: Server updates are now live!</span>
+    <span id="announcement-text">🚨 New Announcement: Waiting for private servers, feel free to apply!</span>
     <button id="announcement-close">✖</button>
 </div>
 
@@ -268,7 +277,7 @@
     <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
-<button id="mute-btn" onclick="toggleMusic()">🔇</button>
+<button id="mute-btn" onclick="toggleMusic()">▶️</button>
 
 <script>
     /* ANNOUNCEMENT CONTROL */
@@ -277,7 +286,7 @@
     const closeBtn = document.getElementById("announcement-close");
 
     if (showAnnouncement === true) {
-        banner.style.display = "flex";
+        banner.style.display = "grid";
     }
 
     closeBtn.onclick = () => {
@@ -296,7 +305,7 @@
             isPlaying = true;
         } else {
             music.pause();
-            btn.textContent = "🔇";
+            btn.textContent = "▶️";
             isPlaying = false;
         }
     }
