@@ -95,6 +95,60 @@
     </style>
 </head>
 
+    <!-- Background Music -->
+<audio id="bg-music" loop>
+    <source src="https://raw.githubusercontent.com/ProDevBilly/Redline-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
+</audio>
+
+<!-- Mute Button -->
+<button id="mute-btn" onclick="toggleMute()">🔊</button>
+
+<script>
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("mute-btn");
+
+    // Start music after first click anywhere (browser requirement)
+    document.addEventListener("click", () => {
+        if (music.paused) {
+            music.play();
+        }
+    }, { once: true });
+
+    function toggleMute() {
+        if (music.muted) {
+            music.muted = false;
+            btn.textContent = "🔊";
+        } else {
+            music.muted = true;
+            btn.textContent = "🔇";
+        }
+    }
+</script>
+
+<style>
+    #mute-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 15px;
+        font-size: 22px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+
+    #mute-btn:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.35);
+    }
+</style>
+    
 <body>
 
 <div class="glass-panel">
