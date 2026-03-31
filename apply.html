@@ -13,6 +13,13 @@
             font-family: Arial, sans-serif;
             color: #fff;
             overflow-x: hidden;
+
+            /* Center everything */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
             background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
             background-size: 300% 300%;
             animation: bgShift 14s ease infinite;
@@ -28,7 +35,6 @@
         .glass-panel {
             width: 90%;
             max-width: 1100px;
-            margin: 40px auto;
             padding: 40px 20px;
             background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(18px);
@@ -39,6 +45,7 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeSlideUp 1.2s ease forwards;
+            text-align: center;
         }
 
         @keyframes fadeSlideUp {
