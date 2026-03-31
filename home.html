@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedLine RP | Home</title>
 
-    <!-- Favicon / Tab Icon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
 
     <style>
@@ -14,6 +14,26 @@
             font-family: Arial, sans-serif;
             background: #ffffff;
             color: #000;
+            overflow-x: hidden;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Animated gradient text */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
         /* Navigation */
@@ -25,6 +45,7 @@
             background: #fff;
             border-bottom: 4px solid;
             border-image: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff) 1;
+            animation: fadeIn 1s ease forwards;
         }
 
         nav img {
@@ -47,26 +68,31 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
+            animation: fadeIn 1.2s ease forwards;
         }
 
         .hero img {
-            width: 80%;
-            max-width: 700px;
+            width: 55%;
+            max-width: 500px;
             border-radius: 15px;
+            animation: float 4s ease-in-out infinite;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-top: 20px;
+            font-weight: 900;
             background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
+            background-size: 200% 200%;
             -webkit-background-clip: text;
             color: transparent;
-            font-weight: 900;
+            animation: gradientShift 3s linear infinite;
         }
 
         .hero p {
             font-size: 20px;
             margin-top: -10px;
+            opacity: 0.8;
         }
 
         /* Button */
@@ -80,18 +106,21 @@
             border-radius: 10px;
             text-decoration: none;
             font-size: 18px;
+            transition: 0.2s;
         }
 
         .btn:hover {
-            opacity: 0.85;
+            transform: scale(1.05);
+            opacity: 0.9;
         }
 
         /* About Section */
         .section {
             max-width: 900px;
-            margin: 50px auto;
+            margin: 60px auto;
             padding: 0 20px;
             text-align: center;
+            animation: fadeIn 1.4s ease forwards;
         }
 
         .section h2 {
@@ -99,6 +128,8 @@
             background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
             -webkit-background-clip: text;
             color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s linear infinite;
         }
 
         .footer {
@@ -107,6 +138,7 @@
             padding: 20px;
             font-size: 14px;
             opacity: 0.6;
+            animation: fadeIn 1.6s ease forwards;
         }
     </style>
 </head>
@@ -130,3 +162,21 @@
     <p>San Aurie’s #1 kid‑friendly coastal roleplay community.</p>
     <a class="btn" href="apply.html">Join Our Roleplays</a>
 </div>
+
+<!-- About Section -->
+<div class="section">
+    <h2>About Us</h2>
+    <p>
+        RedLine RP is a vibrant coastal‑themed roleplay server built around the city of San Aurie.
+        We offer Police, Fire/EMS, DOT, and Civilian roleplay with a clean, safe, and fun environment.
+        Our goal is to create a community where everyone can enjoy immersive RP without toxicity.
+    </p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    © 2026 RedLine RP — All Rights Reserved
+</div>
+
+</body>
+</html>
