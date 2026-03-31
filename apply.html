@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLine RP | Apply</title>
+
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+
+            /* Softer animated gradient background */
+            background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
+            background-size: 300% 300%;
+            animation: bgShift 14s ease infinite;
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* GLASS PANEL */
+        .glass-panel {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px 20px;
+
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+
+            animation: fadeIn 1.2s ease forwards;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TITLE */
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 900;
+
+            background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+
+            animation: bgShift 6s linear infinite;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+            margin-bottom: 30px;
+        }
+
+        /* RESPONSIVE IFRAME */
+        .form-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 900px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 30px; }
+            p { font-size: 15px; }
+            iframe { height: 1100px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="glass-panel">
+    <h1>Apply to RedLine RP</h1>
+    <p>Fill out the application below to join the official roleplay community of San Aurie.</p>
+
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYhl_lUKsxTnMIzGH7KmmZYo0Cvm9ho8VwM4WOxSpF5zypOQ/viewform?embedded=true">
+        </iframe>
+    </div>
+</div>
+
+</body>
+</html>
