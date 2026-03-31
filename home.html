@@ -14,7 +14,6 @@
             color: #fff;
             overflow-x: hidden;
 
-            /* Softer animated gradient background */
             background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
             background-size: 300% 300%;
             animation: bgShift 14s ease infinite;
@@ -26,7 +25,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* GLASS PANEL */
         .glass-panel {
             width: 90%;
             max-width: 1100px;
@@ -56,7 +54,6 @@
             100% { transform: translateY(0px); }
         }
 
-        /* HERO IMAGE */
         .hero-img {
             width: 60%;
             max-width: 380px;
@@ -66,7 +63,6 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* TITLE */
         h1 {
             font-size: 48px;
             margin-top: 25px;
@@ -80,7 +76,6 @@
             animation: bgShift 6s linear infinite;
         }
 
-        /* SUBTEXT */
         p {
             font-size: 20px;
             margin-top: -10px;
@@ -88,7 +83,6 @@
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
         }
 
-        /* BUTTON */
         .btn {
             display: inline-block;
             margin-top: 25px;
@@ -107,7 +101,25 @@
             opacity: 0.9;
         }
 
-        /* SECTION TITLES */
+        /* Discord Button */
+        .discord-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background: #5865F2;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.2s;
+        }
+
+        .discord-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
         .section-title {
             font-size: 32px;
             margin-top: 40px;
@@ -119,7 +131,6 @@
             animation: bgShift 6s linear infinite;
         }
 
-        /* CARDS */
         .card-container {
             display: flex;
             justify-content: center;
@@ -145,7 +156,6 @@
             background: rgba(255, 255, 255, 0.18);
         }
 
-        /* FOOTER */
         .footer {
             text-align: center;
             margin: 40px 0 20px 0;
@@ -153,7 +163,6 @@
             opacity: 0.7;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 600px) {
             h1 { font-size: 34px; }
             p { font-size: 16px; }
@@ -171,8 +180,13 @@
     <!-- HERO -->
     <img class="hero-img" src="https://i.ibb.co/jPytNmjX/Copilot-20260330-210926.png">
     <h1>Welcome to RedLine RP</h1>
-    <p>The official roleplay community of San Aurie.</p>
+
+    <!-- NEW TAGLINE -->
+    <p>The best roleplay server you’ll ever experience inside San Aurie.</p>
+
+    <!-- BUTTONS -->
     <a class="btn" href="apply.html">Join Our Roleplays</a>
+    <a class="discord-btn" href="https://discord.gg/n77YbQMfTt" target="_blank">Join Our Discord</a>
 
     <!-- WHAT WE OFFER -->
     <h2 class="section-title">What We Offer</h2>
