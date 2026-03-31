@@ -1,116 +1,168 @@
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #fff;
-        overflow-x: hidden;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLine RP | Home</title>
 
-        /* Animated gradient background */
-        background: linear-gradient(120deg, #ff4d4d, #ff66cc, #3399ff);
-        background-size: 300% 300%;
-        animation: bgShift 12s ease infinite;
-    }
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
 
-    @keyframes bgShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
 
-    /* GLASS PANEL covering the whole content area */
-    .glass-panel {
-        width: 90%;
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 40px 20px;
+            /* Animated gradient background */
+            background: linear-gradient(120deg, #ff4d4d, #ff66cc, #3399ff);
+            background-size: 300% 300%;
+            animation: bgShift 12s ease infinite;
+        }
 
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
 
-        animation: fadeIn 1.2s ease forwards;
-    }
+        nav img {
+            height: 55px;
+        }
 
-    /* Fade-in animation */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            font-size: 18px;
+        }
 
-    /* Floating animation */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
+        nav a:hover {
+            opacity: 0.7;
+        }
 
-    /* HERO IMAGE */
-    .hero-img {
-        width: 60%;
-        max-width: 380px;
-        display: block;
-        margin: 0 auto;
-        border-radius: 15px;
-        animation: float 4s ease-in-out infinite;
-    }
+        /* GLASS PANEL */
+        .glass-panel {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px 20px;
 
-    /* TITLE */
-    h1 {
-        text-align: center;
-        font-size: 48px;
-        margin-top: 25px;
-        font-weight: 900;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-        background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
-        background-size: 200% 200%;
-        -webkit-background-clip: text;
-        color: transparent;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 
-        animation: bgShift 6s linear infinite;
-    }
+            animation: fadeIn 1.2s ease forwards;
+            text-align: center;
+        }
 
-    /* SUBTEXT */
-    p {
-        text-align: center;
-        font-size: 20px;
-        opacity: 0.9;
-        margin-top: -10px;
-    }
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    /* BUTTON */
-    .btn {
-        display: block;
-        width: fit-content;
-        margin: 25px auto 0 auto;
-        padding: 14px 28px;
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-        background: white;
-        color: #ff4d4d;
-        font-weight: bold;
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 18px;
+        /* HERO IMAGE */
+        .hero-img {
+            width: 60%;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            animation: float 4s ease-in-out infinite;
+        }
 
-        transition: 0.2s;
-    }
+        /* TITLE */
+        h1 {
+            font-size: 48px;
+            margin-top: 25px;
+            font-weight: 900;
 
-    .btn:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
+            background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            color: transparent;
 
-    /* RESPONSIVE FIXES */
-    @media (max-width: 600px) {
-        h1 { font-size: 34px; }
-        p { font-size: 16px; }
-        .hero-img { width: 80%; }
-        .glass-panel { padding: 25px 15px; }
-    }
-</style>
+            animation: bgShift 6s linear infinite;
+        }
+
+        /* SUBTEXT */
+        p {
+            font-size: 20px;
+            margin-top: -10px;
+
+            /* Less bright + readable */
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 28px;
+
+            background: white;
+            color: #ff4d4d;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVE FIXES */
+        @media (max-width: 600px) {
+            h1 { font-size: 34px; }
+            p { font-size: 16px; }
+            .hero-img { width: 80%; }
+            .glass-panel { padding: 25px 15px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <img src="simple-logo.png" alt="RedLine RP Logo">
+    <div>
+        <a href="home.html">Home</a>
+        <a href="apply.html">Apply</a>
+        <a href="rules.html">Rules</a>
+    </div>
+</nav>
 
 <!-- GLASS PANEL -->
 <div class="glass-panel">
@@ -121,3 +173,6 @@
 
     <a class="btn" href="apply.html">Join Our Roleplays</a>
 </div>
+
+</body>
+</html>
