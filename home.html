@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedLine RP | Home</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
 
     <style>
@@ -15,7 +14,6 @@
             color: #fff;
             overflow-x: hidden;
 
-            /* Softer animated gradient background */
             background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
             background-size: 300% 300%;
             animation: bgShift 14s ease infinite;
@@ -27,11 +25,10 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* GLASS PANEL */
         .glass-panel {
             width: 90%;
             max-width: 1100px;
-            margin: 60px auto;
+            margin: 40px auto;
             padding: 40px 20px;
 
             background: rgba(255, 255, 255, 0.10);
@@ -46,20 +43,17 @@
             text-align: center;
         }
 
-        /* Fade-in animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Floating animation */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
 
-        /* HERO IMAGE */
         .hero-img {
             width: 60%;
             max-width: 380px;
@@ -69,7 +63,6 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* TITLE */
         h1 {
             font-size: 48px;
             margin-top: 25px;
@@ -83,29 +76,23 @@
             animation: bgShift 6s linear infinite;
         }
 
-        /* SUBTEXT */
         p {
             font-size: 20px;
             margin-top: -10px;
-
-            /* Less bright + readable */
             color: rgba(255, 255, 255, 0.75);
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
         }
 
-        /* BUTTON */
         .btn {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 28px;
-
             background: white;
             color: #ff4d4d;
             font-weight: bold;
             border-radius: 10px;
             text-decoration: none;
             font-size: 18px;
-
             transition: 0.2s;
         }
 
@@ -114,26 +101,100 @@
             opacity: 0.9;
         }
 
-        /* RESPONSIVE FIXES */
+        /* Section Titles */
+        .section-title {
+            font-size: 32px;
+            margin-top: 40px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: bgShift 6s linear infinite;
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .footer {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 34px; }
             p { font-size: 16px; }
             .hero-img { width: 80%; }
             .glass-panel { padding: 25px 15px; }
+            .card { width: 90%; }
         }
     </style>
 </head>
 
 <body>
 
-<!-- GLASS PANEL -->
 <div class="glass-panel">
-    <img class="hero-img" src="https://i.ibb.co/jPytNmjX/Copilot-20260330-210926.png" alt="RedLine RP Hero Image">
 
+    <!-- HERO -->
+    <img class="hero-img" src="https://i.ibb.co/jPytNmjX/Copilot-20260330-210926.png">
     <h1>Welcome to RedLine RP</h1>
     <p>The official roleplay community of San Aurie.</p>
-
     <a class="btn" href="apply.html">Join Our Roleplays</a>
+
+    <!-- WHAT WE OFFER -->
+    <h2 class="section-title">What We Offer</h2>
+    <div class="card-container">
+        <div class="card">High-quality roleplay experiences</div>
+        <div class="card">Active staff & fair moderation</div>
+        <div class="card">Events, updates, and community fun</div>
+    </div>
+
+    <!-- DEPARTMENTS -->
+    <h2 class="section-title">Departments</h2>
+    <div class="card-container">
+        <div class="card">Police Department</div>
+        <div class="card">Fire & EMS</div>
+        <div class="card">Department of Transportation</div>
+        <div class="card">Civilian Operations</div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <h2 class="section-title">Why Choose RedLine RP?</h2>
+    <div class="card-container">
+        <div class="card">Safe & friendly environment</div>
+        <div class="card">Beginner-friendly roleplay</div>
+        <div class="card">Custom systems & features</div>
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2026 RedLine RP — All Rights Reserved
 </div>
 
 </body>
