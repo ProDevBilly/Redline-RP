@@ -144,31 +144,29 @@
             opacity: 0.7;
         }
 
-#mute-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 0;
-    margin: 0;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-    z-index: 9999;
+        /* LIQUID GLASS MUTE BUTTON */
+        #mute-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 15px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            z-index: 9999;
+        }
 
-    /* FULLY TRANSPARENT BUTTON */
-    background: transparent;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-}
-
-#mute-btn:hover {
-    transform: scale(1.15);
-}
-
+        #mute-btn:hover {
+            transform: scale(1.12);
+            background: rgba(255, 255, 255, 0.25);
+        }
     </style>
 </head>
 
@@ -211,8 +209,7 @@
     © 2026 RedLine RP — All Rights Reserved
 </div>
 
-<!-- Background Music -->
-<audio id="bg-music" autoplay loop muted>
+<audio id="bg-music" autoplay loop muted playsinline>
     <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
@@ -223,15 +220,14 @@
     const btn = document.getElementById("mute-btn");
 
     music.volume = 0;
-    let targetVolume = 0.5;
-    let fadeSpeed = 0.01;
+    let targetVolume = 0.35;
 
     setTimeout(() => {
         music.muted = false;
 
         let fadeIn = setInterval(() => {
             if (music.volume < targetVolume) {
-                music.volume += fadeSpeed;
+                music.volume += 0.01;
             } else {
                 clearInterval(fadeIn);
             }
