@@ -1,182 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedLine RP | Home</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #000;
+        overflow-x: hidden;
+        background: linear-gradient(120deg, #ff4d4d, #ff66cc, #3399ff);
+        background-size: 300% 300%;
+        animation: bgShift 12s ease infinite;
+    }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
+    /* Smooth looping gradient animation */
+    @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #000;
-            overflow-x: hidden;
-        }
+    /* Floating animation */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* Fade-in animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        /* Floating animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 60px 20px;
+        animation: fadeIn 1.2s ease forwards;
+    }
 
-        /* Animated gradient text */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
+    .hero img {
+        width: 45%;
+        max-width: 420px;
+        border-radius: 15px;
+        animation: float 4s ease-in-out infinite;
+    }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: #fff;
-            border-bottom: 4px solid;
-            border-image: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff) 1;
-            animation: fadeIn 1s ease forwards;
-        }
+    .hero h1 {
+        font-size: 52px;
+        margin-top: 20px;
+        font-weight: 900;
+        background: linear-gradient(90deg, #ffffff, #ffcccc, #ffffff);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: bgShift 6s linear infinite;
+    }
 
-        nav img {
-            height: 55px;
-        }
+    .hero p {
+        font-size: 20px;
+        margin-top: -10px;
+        opacity: 0.9;
+        color: white;
+    }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #000;
-            font-size: 18px;
-        }
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 28px;
+        background: white;
+        color: #ff4d4d;
+        font-weight: bold;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.2s;
+    }
 
-        nav a:hover {
-            color: #ff4d4d;
-        }
+    .btn:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+</style>
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            animation: fadeIn 1.2s ease forwards;
-        }
-
-        .hero img {
-            width: 55%;
-            max-width: 500px;
-            border-radius: 15px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-top: 20px;
-            font-weight: 900;
-            background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: gradientShift 3s linear infinite;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-top: -10px;
-            opacity: 0.8;
-        }
-
-        /* Button */
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-
-        /* About Section */
-        .section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-            animation: fadeIn 1.4s ease forwards;
-        }
-
-        .section h2 {
-            font-size: 32px;
-            background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            background-size: 200% 200%;
-            animation: gradientShift 3s linear infinite;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            font-size: 14px;
-            opacity: 0.6;
-            animation: fadeIn 1.6s ease forwards;
-        }
-    </style>
-</head>
-
-<body>
-
-<!-- Navigation -->
-<nav>
-    <img src="simple-logo.png" alt="RedLine RP Logo">
-    <div>
-        <a href="home.html">Home</a>
-        <a href="apply.html">Apply</a>
-        <a href="rules.html">Rules</a>
-    </div>
-</nav>
-
-<!-- Hero Section -->
+<!-- HERO SECTION -->
 <div class="hero">
     <img src="https://i.ibb.co/jPytNmjX/Copilot-20260330-210926.png" alt="RedLine RP Hero Image">
     <h1>Welcome to RedLine RP</h1>
     <p>San Aurie’s #1 kid‑friendly coastal roleplay community.</p>
     <a class="btn" href="apply.html">Join Our Roleplays</a>
 </div>
-
-<!-- About Section -->
-<div class="section">
-    <h2>About Us</h2>
-    <p>
-        RedLine RP is a vibrant coastal‑themed roleplay server built around the city of San Aurie.
-        We offer Police, Fire/EMS, DOT, and Civilian roleplay with a clean, safe, and fun environment.
-        Our goal is to create a community where everyone can enjoy immersive RP without toxicity.
-    </p>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-    © 2026 RedLine RP — All Rights Reserved
-</div>
-
-</body>
-</html>
