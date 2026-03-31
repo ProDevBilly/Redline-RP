@@ -9,19 +9,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: white;
+            background: #ffffff;
             color: #000;
-        }
-
-        /* Gradient Border Wrapper */
-        .page-wrap {
-            border: 6px solid;
-            border-image: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff) 1;
-            padding: 20px;
-            max-width: 1100px;
-            margin: 30px auto;
-            border-radius: 20px;
-            background: white;
         }
 
         /* Navigation */
@@ -29,14 +18,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 15px 40px;
+            background: #fff;
+            border-bottom: 4px solid;
+            border-image: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff) 1;
+        }
+
+        nav img {
+            height: 55px;
         }
 
         nav a {
-            margin-left: 20px;
+            margin-left: 25px;
             text-decoration: none;
             font-weight: bold;
             color: #000;
+            font-size: 18px;
         }
 
         nav a:hover {
@@ -46,11 +43,18 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+        }
+
+        .hero img {
+            width: 70%;
+            max-width: 600px;
+            border-radius: 15px;
         }
 
         .hero h1 {
             font-size: 48px;
+            margin-top: 20px;
             background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
             -webkit-background-clip: text;
             color: transparent;
@@ -65,13 +69,14 @@
         /* Button */
         .btn {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 14px 28px;
             background: linear-gradient(90deg, #ff4d4d, #ff66cc, #3399ff);
             color: white;
             font-weight: bold;
             border-radius: 10px;
             text-decoration: none;
+            font-size: 18px;
         }
 
         .btn:hover {
@@ -80,7 +85,10 @@
 
         /* About Section */
         .section {
-            margin-top: 40px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
         .section h2 {
@@ -92,7 +100,8 @@
 
         .footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
+            padding: 20px;
             font-size: 14px;
             opacity: 0.6;
         }
@@ -101,42 +110,37 @@
 
 <body>
 
-<div class="page-wrap">
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <strong>RedLine RP</strong>
-        </div>
-        <div>
-            <a href="home.html">Home</a>
-            <a href="apply.html">Apply</a>
-            <a href="rules.html">Rules</a>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <div class="hero">
-        <h1>Welcome to RedLine RP</h1>
-        <p>San Aurie’s #1 kid‑friendly coastal roleplay community.</p>
-        <a class="btn" href="apply.html">Join Our Roleplays</a>
+<!-- Navigation -->
+<nav>
+    <img src="simple-logo.png" alt="RedLine RP Logo">
+    <div>
+        <a href="home.html">Home</a>
+        <a href="apply.html">Apply</a>
+        <a href="rules.html">Rules</a>
     </div>
+</nav>
 
-    <!-- About -->
-    <div class="section">
-        <h2>About Us</h2>
-        <p>
-            RedLine RP is a vibrant coastal‑themed roleplay server built around the city of San Aurie.
-            We offer Police, Fire/EMS, DOT, and Civilian roleplay with a clean, safe, and fun environment.
-            Our goal is to create a community where everyone can enjoy immersive RP without toxicity.
-        </p>
-    </div>
+<!-- Hero Section -->
+<div class="hero">
+    <img src="skyline-logo.png" alt="RedLine RP Skyline Logo">
+    <h1>Welcome to RedLine RP</h1>
+    <p>San Aurie’s #1 kid‑friendly coastal roleplay community.</p>
+    <a class="btn" href="apply.html">Join Our Roleplays</a>
+</div>
 
-    <!-- Footer -->
-    <div class="footer">
-        © 2026 RedLine RP — All Rights Reserved
-    </div>
+<!-- About Section -->
+<div class="section">
+    <h2>About Us</h2>
+    <p>
+        RedLine RP is a vibrant coastal‑themed roleplay server built around the city of San Aurie.
+        We offer Police, Fire/EMS, DOT, and Civilian roleplay with a clean, safe, and fun environment.
+        Our goal is to create a community where everyone can enjoy immersive RP without toxicity.
+    </p>
+</div>
 
+<!-- Footer -->
+<div class="footer">
+    © 2026 RedLine RP — All Rights Reserved
 </div>
 
 </body>
