@@ -110,11 +110,6 @@
             transform: scale(1.1);
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1); }
-        }
-
         /* GLASS PANEL */
         .glass-panel {
             width: 90%;
@@ -331,8 +326,13 @@
     © 2026 RedLine RP — All Rights Reserved
 </div>
 
-<!-- AUTOPLAY MUSIC -->
-<audio id="bg-music" autoplay loop muted>
+<!-- SECRET AUTOPLAY FIX -->
+<audio id="silent" autoplay playsinline muted>
+    <source src="https://cdn.jsdelivr.net/gh/anars/blank-audio/1-second-of-silence.mp3" type="audio/mpeg">
+</audio>
+
+<!-- REAL MUSIC -->
+<audio id="bg-music" loop>
     <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
 </audio>
 
@@ -352,23 +352,27 @@
         banner.style.display = "none";
     };
 
-    /* AUTOPLAY MUSIC SYSTEM */
+    /* GUARANTEED AUTOPLAY SYSTEM */
+    const silent = document.getElementById("silent");
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("mute-btn");
 
-    music.volume = 0;
     let targetVolume = 0.25;
 
-    setTimeout(() => {
-        music.muted = false;
-        let fade = setInterval(() => {
-            if (music.volume < targetVolume) {
-                music.volume += 0.01;
-            } else {
-                clearInterval(fade);
-            }
-        }, 60);
-    }, 800);
+    silent.onplay = () => {
+        setTimeout(() => {
+            music.volume = 0;
+            music.play();
+
+            let fade = setInterval(() => {
+                if (music.volume < targetVolume) {
+                    music.volume += 0.01;
+                } else {
+                    clearInterval(fade);
+                }
+            }, 60);
+        }, 300);
+    };
 
     btn.addEventListener("click", () => {
         if (music.muted || music.volume === 0) {
