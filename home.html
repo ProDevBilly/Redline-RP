@@ -41,7 +41,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 9999;
+            z-index: 99999;
             border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         }
 
@@ -59,12 +59,79 @@
             100% { color: #ffffff; }
         }
 
-        /* HERO SECTION */
-        .hero {
-            margin-top: 160px;
+        /* ANNOUNCEMENT BANNER */
+        #announcement-banner {
+            width: 100%;
+            padding: 15px 20px;
+
+            display: none;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+            position: fixed;
+            top: 60px;
+            left: 0;
+            z-index: 99998;
+
+            animation: slideDown 0.6s ease forwards;
+        }
+
+        #announcement-text {
+            grid-column: 2;
             text-align: center;
-            animation: fadeSlideUp 1.2s ease forwards;
+        }
+
+        #announcement-close {
+            grid-column: 3;
+            justify-self: end;
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #announcement-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.1);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1); }
+        }
+
+        /* GLASS PANEL */
+        .glass-panel {
+            width: 90%;
+            max-width: 1100px;
+            margin-top: 160px;
+            padding: 40px 20px;
+
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(18px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+
             opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease forwards;
+            text-align: center;
         }
 
         @keyframes fadeSlideUp {
@@ -72,10 +139,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero img {
-            width: 300px;
-            border-radius: 20px;
-            animation: float 4s ease-in-out infinite;
+        /* HERO IMAGE */
+        .hero-img {
+            width: 60%;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            animation: float 4s ease-in-out infinite, fadeIn 1.4s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes float {
@@ -85,8 +162,8 @@
         }
 
         h1 {
-            font-size: 60px;
-            margin-top: 20px;
+            font-size: 48px;
+            margin-top: 25px;
             font-weight: 900;
             background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
             background-size: 200% 200%;
@@ -96,20 +173,15 @@
         }
 
         p {
-            font-size: 22px;
+            font-size: 20px;
             margin-top: -10px;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
         }
 
-        /* BUTTONS */
-        .btn-row {
-            margin-top: 35px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .btn {
+        .btn, .discord-btn, .roblox-btn {
+            display: inline-block;
+            margin-top: 25px;
             padding: 14px 28px;
             border-radius: 10px;
             text-decoration: none;
@@ -128,9 +200,51 @@
             color: white;
         }
 
-        .btn:hover {
+        .btn:hover, .discord-btn:hover, .roblox-btn:hover {
             transform: scale(1.05);
             opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-top: 40px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #ffe6f2, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: bgShift 6s linear infinite;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .footer {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 14px;
+            opacity: 0.7;
         }
 
         /* MUSIC BUTTON */
@@ -155,12 +269,6 @@
             transform: scale(1.12);
             background: rgba(255, 255, 255, 0.25);
         }
-
-        .footer {
-            margin-top: 80px;
-            margin-bottom: 20px;
-            opacity: 0.7;
-        }
     </style>
 </head>
 
@@ -173,21 +281,50 @@
     <a href="departments.html">Departments</a>
 </div>
 
-<!-- HERO SECTION -->
-<div class="hero">
-    <img src="https://i.ibb.co/PZy08gcC/Icon.png">
-    <h1>RedLine Roleplay</h1>
+<!-- ANNOUNCEMENT -->
+<div id="announcement-banner">
+    <span id="announcement-text">🚨 New Announcement: Waiting for private servers, feel free to apply!</span>
+    <button id="announcement-close">✖</button>
+</div>
+
+<div class="glass-panel">
+
+    <img class="hero-img" src="https://i.ibb.co/PZy08gcC/Icon.png">
+    <h1>Welcome to RedLine RP</h1>
+
     <p>The best roleplay server you’ll ever experience inside San Aurie.</p>
 
-    <div class="btn-row">
-        <a class="btn discord-btn" href="https://discord.gg/EgQfVurNMZ" target="_blank">
-            Join Our Discord (Required)
-        </a>
+    <!-- DISCORD REQUIRED -->
+    <a class="discord-btn" href="https://discord.gg/EgQfVurNMZ" target="_blank">
+        Join Our Discord (Required)
+    </a>
 
-        <a class="btn roblox-btn" href="https://www.roblox.com/communities/668533941/RedLine-RP-Community#!/about" target="_blank">
-            Join Our Roblox Group (Required)
-        </a>
+    <!-- ROBLOX GROUP REQUIRED -->
+    <a class="roblox-btn" href="https://www.roblox.com/communities/668533941/RedLine-RP-Community#!/about" target="_blank">
+        Join Our Roblox Group (Required)
+    </a>
+
+    <h2 class="section-title">What We Offer</h2>
+    <div class="card-container">
+        <div class="card">High-quality roleplay experiences</div>
+        <div class="card">Active staff & fair moderation</div>
+        <div class="card">Events, updates, and community fun</div>
     </div>
+
+    <h2 class="section-title">Departments</h2>
+    <div class="card-container">
+        <div class="card">San Aurie Metropolitan Police</div>
+        <div class="card">San Aurie Fire & Rescue</div>
+        <div class="card">San Aurie DOT Services</div>
+    </div>
+
+    <h2 class="section-title">Why Choose RedLine RP?</h2>
+    <div class="card-container">
+        <div class="card">Safe & friendly environment</div>
+        <div class="card">Beginner-friendly roleplay</div>
+        <div class="card">Custom systems & features</div>
+    </div>
+
 </div>
 
 <div class="footer">
@@ -202,6 +339,19 @@
 <button id="mute-btn">🔊</button>
 
 <script>
+    /* ANNOUNCEMENT CONTROL */
+    let showAnnouncement = true; 
+    const banner = document.getElementById("announcement-banner");
+    const closeBtn = document.getElementById("announcement-close");
+
+    if (showAnnouncement === true) {
+        banner.style.display = "grid";
+    }
+
+    closeBtn.onclick = () => {
+        banner.style.display = "none";
+    };
+
     /* AUTOPLAY MUSIC SYSTEM */
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("mute-btn");
