@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
             color: #fff;
             overflow-x: hidden;
 
-            /* Center layout */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -182,7 +181,7 @@
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
         }
 
-        .btn, .discord-btn {
+        .btn, .discord-btn, .roblox-btn {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 28px;
@@ -203,7 +202,12 @@
             color: white;
         }
 
-        .btn:hover, .discord-btn:hover {
+        .roblox-btn {
+            background: #E2231A;
+            color: white;
+        }
+
+        .btn:hover, .discord-btn:hover, .roblox-btn:hover {
             transform: scale(1.05);
             opacity: 0.9;
         }
@@ -298,9 +302,15 @@
 
     <p>The best roleplay server you’ll ever experience inside San Aurie.</p>
 
-    <a class="btn" href="apply.html">Join Our Roleplays</a>
-    <a class="discord-btn" href="https://discord.gg/n77YbQMfTt" target="_blank">Join Our Discord (Required)</a>
-    <a class="group-btn" href="https://www.roblox.com/communities/668533941/RedLine-RP-Community#!/about" target="_blank">Join Our Roblox Group (Required)</a>
+    <!-- DISCORD REQUIRED -->
+    <a class="discord-btn" href="https://discord.gg/n77YbQMfTt" target="_blank">
+        Join Our Discord (Required)
+    </a>
+
+    <!-- ROBLOX GROUP REQUIRED -->
+    <a class="roblox-btn" href="https://www.roblox.com/communities/668533941/RedLine-RP-Community#!/about" target="_blank">
+        Join Our Roblox Group (Required)
+    </a>
 
     <h2 class="section-title">What We Offer</h2>
     <div class="card-container">
@@ -316,60 +326,4 @@
         <div class="card">San Aurie DOT Services</div>
     </div>
 
-    <h2 class="section-title">Why Choose RedLine RP?</h2>
-    <div class="card-container">
-        <div class="card">Safe & friendly environment</div>
-        <div class="card">Beginner-friendly roleplay</div>
-        <div class="card">Custom systems & features</div>
-    </div>
-
-</div>
-
-<div class="footer">
-    © 2026 RedLine RP — All Rights Reserved
-</div>
-
-<!-- MUSIC -->
-<audio id="bg-music" loop>
-    <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
-</audio>
-
-<button id="mute-btn" onclick="toggleMusic()">🔇</button>
-
-<script>
-    /* ANNOUNCEMENT CONTROL */
-    let showAnnouncement = true; 
-    const banner = document.getElementById("announcement-banner");
-    const closeBtn = document.getElementById("announcement-close");
-
-    if (showAnnouncement === true) {
-        banner.style.display = "grid";
-    }
-
-    closeBtn.onclick = () => {
-        banner.style.display = "none";
-    };
-
-    /* MUSIC CONTROL */
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("mute-btn");
-    let isPlaying = false;
-
-    // Start at 25% volume
-    music.volume = 0.25;
-
-    function toggleMusic() {
-        if (!isPlaying) {
-            music.play();
-            btn.textContent = "🔊";
-            isPlaying = true;
-        } else {
-            music.pause();
-            btn.textContent = "🔇";
-            isPlaying = false;
-        }
-    }
-</script>
-
-</body>
-</html>
+    <h2 class="section-title"
