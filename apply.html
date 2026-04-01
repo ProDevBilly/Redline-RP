@@ -127,7 +127,7 @@
             opacity: 0;
         }
 
-        /* LIQUID GLASS BUTTON */
+        /* BUTTONS */
         .discord-btn {
             background:#5865F2;
             color:white;
@@ -161,29 +161,6 @@
             transform: scale(1.05);
             opacity: 0.9;
         }
-
-        #mute-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 15px;
-            font-size: 22px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            color: white;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-            z-index: 9999;
-        }
-
-        #mute-btn:hover {
-            transform: scale(1.12);
-            background: rgba(255, 255, 255, 0.25);
-        }
     </style>
 </head>
 
@@ -216,31 +193,8 @@
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYhl_lUKsxTnMIzGH7KmmZYo0Cvm9ho8VwM4WOxSpF5zypOQ/viewform?embedded=true"></iframe>
 </div>
 
-<audio id="bg-music" loop>
-    <source src="https://raw.githubusercontent.com/ProDevBilly/RedLine-RP/main/Junnior%20-%20City2City%20(Official%20Video).mp3" type="audio/mpeg">
-</audio>
-
-<button id="mute-btn" onclick="toggleMusic()">🔇</button>
-
 <script>
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("mute-btn");
-    let isPlaying = false;
-
-    // Start music at 25% volume
-    music.volume = 0.25;
-
-    function toggleMusic() {
-        if (!isPlaying) {
-            music.play();
-            btn.textContent = "🔊";
-            isPlaying = true;
-        } else {
-            music.pause();
-            btn.textContent = "🔇";
-            isPlaying = false;
-        }
-    }
+    /* No music — only announcement logic if needed later */
 </script>
 
 </body>
