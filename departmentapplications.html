@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLine RP | Apply</title>
 
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bRgdHVyh/Untitled.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+
+            /* Center everything */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+            background: linear-gradient(120deg, #ff7a7a, #ff8ed6, #6fb3ff);
+            background-size: 300% 300%;
+            animation: bgShift 14s ease infinite;
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* TOPBAR */
+        .topbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .topbar a {
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0% { color: #ffffff; }
+            50% { color: #ffe6f2; }
+            100% { color: #ffffff; }
+        }
+
+        /* Glass Panel Animation */
+        .glass-panel {
+            width: 90%;
+            max-width: 1100px;
+            padding: 40px 20px;
+            margin-top: 120px;
+
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(18px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease forwards;
+            text-align: center;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header Image Animation */
+        .apply-header-img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+
+            animation: float 4s ease-in-out infinite, fadeIn 1.4s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 900px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+
+            animation: fadeIn 1.6s ease forwards;
+            opacity: 0;
+        }
+
+        /* BUTTONS */
+        .discord-btn {
+            background:#5865F2;
+            color:white;
+            padding:12px 20px;
+            border-radius:10px;
+            font-weight:bold;
+            text-decoration:none;
+            display:inline-block;
+            margin-bottom:20px;
+            transition:0.2s;
+        }
+
+        .discord-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .roblox-btn {
+            background:#E2231A;
+            color:white;
+            padding:12px 20px;
+            border-radius:10px;
+            font-weight:bold;
+            text-decoration:none;
+            display:inline-block;
+            margin-bottom:25px;
+            transition:0.2s;
+        }
+
+        .roblox-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- TOPBAR WITH ANIMATED TEXT -->
+<div class="topbar">
+    <a href="home.html">Home</a>
+    <a href="apply.html">Civilian Application</a>
+    <a href="departments.html">Departments</a>
+</div>
+
+<div class="glass-panel">
+
+    <!-- Animated Header Image -->
+    <img class="apply-header-img" src="https://i.ibb.co/d4bcyHwp/2.png" alt="Apply to RedLine RP">
+
+    <p>The best roleplay server you’ll ever experience inside San Aurie.</p>
+
+    <!-- DISCORD REQUIRED -->
+    <a class="discord-btn" href="https://discord.gg/EgQfVurNMZ" target="_blank">
+        Join Our Discord (Required)
+    </a>
+
+    <!-- ROBLOX GROUP REQUIRED -->
+    <a class="roblox-btn" href="https://www.roblox.com/communities/668533941/RedLine-RP-Community#!/about" target="_blank">
+        Join Our Roblox Group (Required)
+    </a>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYe7aBq6uYTyNYTqWzAO8oJ3tLgUMLWhdTZNIcc7Rzl3uRRA/viewform?embedded=true"></iframe>
+</div>
+
+<script>
+    /* No music — only announcement logic if needed later */
+</script>
+
+</body>
+</html>
